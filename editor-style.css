@@ -1,0 +1,320 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
+/* 
+== meyer reset
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+== begin editor styles
+*/
+
+body {
+	font-size:100%;
+	line-height:1.125em; /* 16Ãƒâ€”1.125=18 */
+	font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	color:#fff;
+	background-color:#5f5d59;
+	max-width:47em;
+	margin:1em;
+}
+a {
+	color:#6bcbca;
+	text-decoration:none;
+	-webkit-transition: all 300ms ease-out;
+	-moz-transition: all 300ms ease-out;
+	-ms-transition: all 300ms ease-out;
+	-o-transition: all 300ms ease-out;
+	transition: all 300ms ease-out;
+}
+a:hover,
+a:focus {
+
+	color:#dd6259;
+}
+
+{
+	line-height:1.25em;
+	position: relative;
+	clear:both;
+	margin:1em 0 4em 0;
+}
+
+h1{
+	font-size:2.5em;
+	font-weight: 200;
+	margin:.5em 0;
+	line-height:1.2em;
+	color:#E4DEDC;
+}
+h2{
+	font-size:1.5em;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin:.5em 0 .25em 0;
+	color:#C5B8B4;
+}
+
+
+h3 {		
+	font-size:1.2em; 
+	color:#DDD6D2;
+	margin:.5em 0 .25em 0;
+}
+h4 {		
+	font-size:1em; 
+	color:#B8A8A3;
+	margin:.5em 0 .25em 0;
+}
+h5 {		
+	text-transform: uppercase;
+	font-weight:bold;
+	font-size:.85em; 
+	color:#DADADA;
+	margin:.5em 0 .25em 0;
+}
+h6 {
+	margin:.5em 0 .25em 0;
+	text-transform:uppercase;
+	font-size:.72em;  /* 10px */
+}
+
+
+p {
+	margin: 10px 0;
+}
+img {	
+	padding:6px;
+	margin:0 0 1em 0;
+	background-color:rgba(0,0,0,.1);
+
+	max-width:100%;
+	height:auto;
+
+}
+blockquote {
+	clear:both;
+	line-height:22px;
+	font-size:1.375em;
+	background-color: rgba(255,255,255,.1);
+	quotes: "\201C" "\201D" "\2018" "\2019";
+	margin:3em 0;
+	padding:1.5em 1em 1em 1em ;
+	position: relative;
+	font-size:1.3em;
+	-webkit-border-radius: 8px;    
+	border-radius: 8px;
+
+}
+blockquote:before{
+	content:open-quote;
+	font-size:7em;
+	clear:both;
+	color:#97ce68;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	position:absolute;
+	top:.2em;
+	left:0;
+}
+blockquote p,
+blockquote blockquote {
+	font-size:inherit;
+	font-weight: 300;	
+}
+cite {
+	display:block;
+	color:#aaa;
+	font-size:.75em;
+	text-align:right;
+	margin-top:.25em;
+}
+/*
+==tables
+*/
+table {
+	background-color:rgba(255,255,255,.1);
+	width:100%;
+	margin-bottom:15px;
+}
+th {
+	background-color:rgba(255,255,255,.1);
+	text-transform:uppercase;
+	font-size:.875em;
+	text-align:left;
+	color:white;
+}
+td,
+th {
+	padding:6px;
+	border-bottom:	solid 1px rgba(255,255,255,.1);
+	border-right:	solid 1px rgba(255,255,255,.1);
+}
+/*
+==Lists
+*/
+dt {
+	font-weight:bold;
+	font-style:italic;
+	margin-top:10px;
+}
+ol,
+ul {
+	margin:10px 0;
+}
+ul {
+	margin-left:10px;
+}
+ol {
+	list-style-type:decimal;
+	margin-left:16px;
+	list-style-position:inside;
+}
+ol ol {
+	list-style-type:lower-alpha;
+}
+ol ol ol {
+	list-style-type:lower-roman;
+}
+ul li {
+	background-image:url(images/bullet_standard.png);
+	padding-left:16px;
+	background-repeat:no-repeat;
+	background-position:0 4px
+}
+/*
+==misc tags
+*/
+abbr,
+acronym {
+	border-bottom:dotted 1px #CCC;
+}
+code,
+pre,
+kbd,
+tt,
+var {
+	font-family:"Courier New", Courier, monospace;
+	background-color:rgba(0,0,0,.1);
+	padding:2px;
+}
+s {
+	text-decoration:line-through;
+}
+b,
+strong {
+	font-weight:bold;
+}
+i,
+em {
+	font-style:italic;
+}
+q:before,
+q:after {
+	content:'"'
+}
+sup {
+	vertical-align:super;
+}
+sub {
+	vertical-align:sub;
+}
+del, strike{
+	color:inherit;
+}
+
+.thumb {
+	float:left;
+	margin: 0 1em 1em 0;
+	position:relative;
+
+}
+.alignleft {
+	float:left;
+	margin-left:0px;
+}
+.alignright {
+	float:right;
+	margin-right:0px;
+}
+.aligncenter {
+	margin:0 auto;
+	display:block;
+}
+.alignnone {
+	margin:0;
+}
+.wp-caption {
+	text-align:center;
+	padding:10px;
+	margin:10px;
+}
+.wp-caption-text {
+	font-style:italic;
+	color:#999;
+}
+.wp-caption img {
+	margin:0 0 10px 0;
+}
+.onethird {
+	width:32%;
+	float:left;
+	margin-right:1%;
+}
+.twothirds {
+	width:66%;
+	float:left;
+}
+.onehalf {
+	width:50%;
+	float:left;
+}
+.onequarter {
+	width:25%;
+	float:left;
+}
+.threequarters {
+	width:75%;
+	float:left;
+}
