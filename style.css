@@ -1430,11 +1430,12 @@ body.single-product .post-meta span{
 	.contact-info tel{
 		font-weight: bold;
 	}
-	header.top-bar nav{
+	header .top-bar nav{
 		width:69%;
 		float:left;
 		text-align: right;-webkit-border-radius: 0 8px 8px 0;    
 		border-radius: 0 8px 8px 0;
+		background-color: rgba(0,0,0,.1);
 	}
 	.home #sidebar .widget{
 		width:31.3%;
