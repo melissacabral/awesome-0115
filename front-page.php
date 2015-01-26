@@ -37,5 +37,5 @@
 
 </main><!-- end #content -->
 
-<?php get_sidebar(); //include sidebar.php ?>
+<?php get_sidebar('frontpage'); //include sidebar-frontpage.php ?>
 <?php get_footer(); //include footer.php ?>

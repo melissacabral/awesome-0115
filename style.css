@@ -1257,12 +1257,11 @@ RSS Feed Image
 	text-align:center;
 	clear:none;
 }
-.post-type-archive-product .thumbnail,
-.tax-brand .thumbnail,
-.tax-feature .thumbnail{
+.post-type-archive-product .wp-post-image,
+.tax-brand .wp-post-image,
+.tax-feature .wp-post-image{
 	width:auto;
 	margin:0;
-	padding:0;
 	float:none;	
 }
 .post-type-archive-product .hentry h2,
@@ -1436,6 +1435,7 @@ body.single-product .post-meta span{
 		text-align: right;-webkit-border-radius: 0 8px 8px 0;    
 		border-radius: 0 8px 8px 0;
 		background-color: rgba(0,0,0,.1);
+		margin-bottom: 2em;
 	}
 	.home #sidebar .widget{
 		width:31.3%;

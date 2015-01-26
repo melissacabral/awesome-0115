@@ -12,21 +12,31 @@
 				</a>
 			</h2>
 
-			<?php the_post_thumbnail( 'thumbnail' ); ?>
+			<?php the_post_thumbnail( 'large', array('class' => 'product-image') ); ?>
 
 			<div class="entry-content">
-				<?php //if showing a single post or page, display all the content, otherwise show the short content
-				if( is_singular() ){
-					the_content();
-				}else{
-					the_excerpt();
-				}
-				?>
+
+				<?php the_meta(); /* outputs a list of ALL custom fields for this post */ ?>
+
+				<?php the_terms( $post->ID, 'brand', 'Brand: '  ); ?>
+
+				<?php the_content(); ?>
 			</div>
-					
+				
 		</article><!-- end post -->
 
 		<?php endwhile; ?>
+
+		<div class="pagination">
+			<?php 
+			//links to 
+			previous_post_link( '%link' , '&larr; Older Post: %title' );
+			next_post_link( '%link' , 'Newer Post: %title &rarr;'  );				
+			?>
+		</div>
+
+		
+
 	<?php else: ?>
 
 	<h2>Sorry, no posts found</h2>
@@ -36,5 +46,5 @@
 
 </main><!-- end #content -->
 
-<?php get_sidebar('page'); //include sidebar-page.php ?>
+<?php get_sidebar(); //include sidebar.php ?>
 <?php get_footer(); //include footer.php ?>

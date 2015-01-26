@@ -50,6 +50,50 @@ function awesome_menu_areas(){
 }
 add_action( 'init', 'awesome_menu_areas' );
 
+/**
+ * Add Widget Areas (dynamic sidebars)
+ * @since  0.1
+ */
+function awesome_widget_areas(){
+	register_sidebar( array(
+		'name' 			=> 'Blog Sidebar',
+		'id'			=> 'blog-sidebar',
+		'description' 	=> 'These widgets will appear next to the blog and archive views',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Home Widgets',
+		'id'			=> 'home-widgets',
+		'description' 	=> 'These widgets will appear on the front page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Page Sidebar',
+		'id'			=> 'page-sidebar',
+		'description' 	=> 'These widgets will appear next to most pages',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Footer Widgets',
+		'id'			=> 'footer-widgets',
+		'description' 	=> 'These widgets will appear at the bottom of everything',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'awesome_widget_areas' );
+
 
 
 
