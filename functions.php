@@ -19,6 +19,11 @@ add_image_size( 'big-banner', '1300', '300', true );
 add_editor_style();
 
 /**
+ * required - set maximum width for embeds
+ */
+if ( ! isset( $content_width ) ) $content_width = 710;
+
+/**
  * Make Excerpts Better - change length and [...]
  * @since  0.1
  */
@@ -95,7 +100,43 @@ function awesome_widget_areas(){
 add_action( 'widgets_init', 'awesome_widget_areas' );
 
 
+/**
+ * Display 6 most recent products
+ */
+function awesome_recent_products( $number = 6, $type = 'post' ){
+	 //custom query to get  most recent products
+	$products_query = new WP_Query( array(
+		'post_type' 		=> $type,
+		'posts_per_page' 	=> $number,
+	) ); 
 
+	//custom loop
+	if( $products_query->have_posts() ):
+	?>
+	<section class="latest-products">
+		<h2>Newest Products in the shop:</h2>
+
+		<ul>
+			<?php while( $products_query->have_posts() ):
+			  		$products_query->the_post(); ?>
+			<li>
+				<a href="<?php the_permalink(); ?>">
+
+					<?php the_post_thumbnail( 'thumbnail' ); ?>
+
+					<div class="product-info">
+						<h3><?php the_title(); ?></h3>
+						<p><?php the_excerpt(); ?></p>
+					</div>
+				</a>
+			</li>
+			<?php endwhile; ?>
+		</ul>
+	</section>
+	<?php endif; 
+	//prevent clashing with other loops
+	wp_reset_postdata(); 
+}
 
 
 

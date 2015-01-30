@@ -35,6 +35,8 @@
 
 	<?php endif;  //end THE LOOP ?>
 
+<?php awesome_recent_products( 6, 'product' ); ?>
+
 </main><!-- end #content -->
 
 <?php get_sidebar('frontpage'); //include sidebar-frontpage.php ?>

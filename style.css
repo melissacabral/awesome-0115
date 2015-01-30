@@ -36,7 +36,6 @@ Tags:gray, two-columns
 ==Media Queries
 */
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
-
 /*TODO:  Remove this during the customization demo*/
 body{
 	background-color: #565552;
@@ -77,15 +76,14 @@ body {
 	margin:2% auto;
 	padding:0 2%;
 	max-width:70em;}
-#content {
-	clear: both;
-	word-wrap:break-word;
-}
-
-footer#colophon {
-	clear:both;
-	padding-bottom:20px;
-}
+	#content {
+		clear: both;
+		word-wrap:break-word;
+	}
+	footer#colophon {
+		clear:both;
+		padding-bottom:20px;
+	}
 /*
 ==Navigation Top Bar
 */
@@ -269,7 +267,7 @@ header[role=banner] .search-form{
 	padding:5px 10px;
 	color:#39302B;
 	border:none;
-	 /*white-space: nowrap;prevent line break*/
+	/*white-space: nowrap;prevent line break*/
 	display: inline-block;
 	margin-top:.5em;
 	-webkit-border-radius: 30px;
@@ -1366,23 +1364,57 @@ body.single-product .post-meta span{
 /*
 ==Products Widget  
 */
-#featured-content{
+.latest-products{
 	margin:2em 0;
 }
-#featured-content .products-widget li{
+.latest-products h2{
+	margin-bottom: 1em;
+	font-size: 1.2em;
+}
+.latest-products img {      
+	margin:0 0 10px 0;
+}
+.latest-products .readmore {
+	display:none;
+}
+.latest-products h3{
+	font-size:1.3em;
+}
+.latest-products a, .latest-products a:hover{
+	color: white;
+}
+.latest-products ul{
+	list-style-type:none;
+}
+.latest-products li{
+	float:left;	
+	list-style-type:none;	
+	background-image:none !important;
+	position:relative;
 	width:16.666666%;
 	margin:0;
 	padding:0;
 }
-#featured-content .widget-title{
-	font-size:1.5em;
-	font-weight: 200;
-	margin:.75em 0;
-	text-align: center;
-}
-#featured-content .products-widget .product-info{
+.latest-products .product-info{
+	position:absolute;
+	left:0%;
+	bottom:0px;
+	padding:10px 10px 0;
+	width:100%;
+	height:70%;
 	max-width: 150px;
 	background-color: rgba(100,193,192,.85);
+	opacity:0;
+	overflow:hidden;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+.latest-products a:hover .product-info{
+	opacity: 1;
+	bottom:14px;
 }
 /*==Contact info options box*/
 .contact-info{
@@ -1464,6 +1496,7 @@ body.single-product .post-meta span{
 	.home #content{
 		float:none;
 		width:100%;
+		clear: both;
 	}
 	footer#colophon .widget {
 		width:25%;
