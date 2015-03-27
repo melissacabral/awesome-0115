@@ -7,7 +7,13 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
-			<?php the_post_thumbnail( 'big-banner' ); ?>
+			<?php 
+			if( function_exists('rad_slider') ):
+				rad_slider();
+			else:
+				the_post_thumbnail( 'big-banner' );
+			endif;
+			 ?>
 
 			<h2 class="entry-title"> 
 				<a href="<?php the_permalink(); ?>"> 

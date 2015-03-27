@@ -138,6 +138,83 @@ function awesome_recent_products( $number = 6, $type = 'post' ){
 	wp_reset_postdata(); 
 }
 
+/**
+ * Customization API stuff
+ */
+add_action( 'customize_register', 'awesome_theme_customizer' );
+function awesome_theme_customizer( $wp_customize ){
+	//Link color - create new setting under existing "colors" section
+	$wp_customize->add_setting( 'awesome_link_color', array( 'default' => '#6bcbca' ) );
+
+	//add control (UI)
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+		'link_color', array(
+			'section' 	=> 'colors', //WP created this by default
+			'settings'	=> 'awesome_link_color',
+			'label' 	=> 'Link Color',
+		) ) );
+
+	//Add a section for layout options
+	$wp_customize->add_section( 'awesome_layout_section', array(
+		'title' 		=> 'Page Layout',
+		'priority' 		=> 50,
+		'description' 	=> 'Control the way the page is laid out',
+	) );
+
+	//add a setting for sidebar position
+	$wp_customize->add_setting( 'awesome_layout', 
+		array( 'default' => 'right' ) );
+	//add UI for layout (radio option)
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+		'sidebar_layout', array(
+			'section' 	=> 'awesome_layout_section', //the one we registered
+			'settings'	=> 'awesome_layout', //the one we registered
+			'label' 	=> 'Sidebar Layout',
+			'type'		=> 'radio', //radio, checkbox, select, textarea, text, etc
+			'choices'	=> array(
+				'left' 		=> 'to the Left of content',
+				'right'		=> 'to the Right of content',
+			),
+		) ) );
+}
+
+/**
+ * CSS for customizer
+ */
+add_action( 'wp_head', 'awesome_customized_css' );
+function awesome_customized_css(){
+	?>
+	<style type="text/css">
+		a{
+			color: <?php echo get_theme_mod('awesome_link_color') ?>;	
+		}
+
+		<?php if( get_theme_mod( 'awesome_layout' ) == 'right' ): ?>
+
+			#sidebar{
+				float:right;
+			}
+			#content{
+				float:left;
+			}
+		<?php else: ?>
+			#sidebar{
+				float:left;
+			}
+			#content{
+				float:right;
+			}
+
+		<?php endif; ?>
+
+
+
+	</style>
+	<?php
+}
+
+
+
 
 
 

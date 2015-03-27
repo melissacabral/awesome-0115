@@ -19,6 +19,13 @@
 <body <?php body_class('custom'); ?>>	
 	<div id="wrapper">
 	<header role="banner">
+
+		<?php $values = get_option( 'rad_options' ); ?>
+		<div class="contact-info">
+			<a href="tel:<?php echo $values['phone'] ?>"><?php echo $values['phone'] ?></a>
+			<address><?php echo $values['address'] ?></address>
+		</div>
+
 		<div class="top-bar clearfix">
 			<h1 class="site-name">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ) ?>" rel="home"> 

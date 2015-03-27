@@ -42,9 +42,7 @@ body{
 	color:#F2F2F2;
 	background-size: cover;
 }
-a{
-	color:#679EA5;
-}
+
 /* 
 ==Basic Links
 */
@@ -1480,7 +1478,7 @@ body.single-product .post-meta span{
 	#content {
 		width:66.5%;
 		clear: both;
-		float:left;
+		/*float:left;  removed for customization api*/
 		word-wrap:break-word;
 	}
 	.page-template-template-no-sidebar-php #content,
@@ -1490,7 +1488,7 @@ body.single-product .post-meta span{
 	}
 	#sidebar {
 		width:31%;
-		float:right;
+		/*float:right;  removed for customization api*/
 	}
 	.home #sidebar,
 	.home #content{
